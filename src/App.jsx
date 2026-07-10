@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,8 +11,26 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <div className="relative min-h-screen selection:bg-accentTeal/30 selection:text-white">
+    <div className="relative min-h-screen selection:bg-accentIndigo/30 selection:text-white transition-colors duration-300">
       
       {/* Background Animated Neon Blobs (Global) */}
       <div className="bg-blob blob-teal"></div>
@@ -20,7 +38,7 @@ export default function App() {
       <div className="bg-blob blob-indigo"></div>
 
       {/* Navigation Menu */}
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       {/* Main Sections */}
       <main className="relative z-10">

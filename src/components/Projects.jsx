@@ -15,7 +15,7 @@ export default function Projects() {
         'Designed MySQL database schema and integrated REST APIs for efficient data management.',
         'Built responsive interfaces and optimized application performance for an enhanced user experience.'
       ],
-      github: 'https://github.com/kachhadiyajanvi',
+      github: 'https://github.com/kachhadiyajanvi/E-GAMESCOUT',
     },
     {
       title: 'FarmStayHub',
@@ -28,7 +28,7 @@ export default function Projects() {
         'Designed responsive UI components to provide a seamless user experience across all devices.',
         'Integrated real-time database queries to display availability and handle dynamic booking schedules.'
       ],
-      github: 'https://github.com/kachhadiyajanvi',
+      github: 'https://github.com/kachhadiyajanvi/FarmStayHub',
     },
     {
       title: 'GLS FDP Portal',
@@ -41,7 +41,7 @@ export default function Projects() {
         'Focused on responsive design, performance optimization, and intuitive user experience.',
         'Created secure administration panels for program coordinators to review registrations and verify attendance.'
       ],
-      github: 'https://github.com/kachhadiyajanvi',
+      github: 'https://github.com/kachhadiyajanvi/gls_fdp',
     },
     {
       title: 'DFarm React Template',
@@ -54,14 +54,14 @@ export default function Projects() {
         'Designed responsive layouts using Tailwind CSS with reusable UI components.',
         'Optimized component architecture for scalability and maintainability, ensuring modular code structure.'
       ],
-      github: 'https://github.com/kachhadiyajanvi',
+      github: 'https://github.com/kachhadiyajanvi/DFarmReactTemplate',
     }
   ];
 
   return (
     <section id="projects" className="py-24 px-6 relative bg-darkBg/30">
       <div className="max-w-7xl mx-auto z-10 relative">
-        
+
         {/* Section Title */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
@@ -76,11 +76,11 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="glass-panel rounded-3xl overflow-hidden hover:border-accentTeal/20 transition-all duration-300 flex flex-col group"
             >
-              
+
               {/* Project Card Header Visual */}
               <div className={`h-32 bg-gradient-to-br ${project.bgGradient} flex items-center justify-between px-8 relative overflow-hidden border-b border-white/5`}>
                 <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-white/5 rounded-full blur-lg group-hover:scale-150 transition-all duration-500"></div>
@@ -114,7 +114,7 @@ export default function Projects() {
 
               {/* Project Content */}
               <div className="p-8 flex-grow flex flex-col justify-between space-y-6">
-                
+
                 {/* Bullets */}
                 <ul className="list-disc pl-5 space-y-2 text-textSecondary text-sm md:text-base leading-relaxed flex-grow">
                   {project.bullets.map((bullet, bIdx) => (
@@ -127,8 +127,8 @@ export default function Projects() {
                 {/* Tech Badges */}
                 <div className="pt-4 border-t border-white/5 flex flex-wrap gap-2">
                   {project.tags.map((tag, tIdx) => (
-                    <span 
-                      key={tIdx} 
+                    <span
+                      key={tIdx}
                       className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs font-semibold text-accentTeal"
                     >
                       {tag}
