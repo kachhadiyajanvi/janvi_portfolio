@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, ArrowRight } from 'lucide-react';
+import janvi from '../assets/janvi.jpg';
 
 export default function Hero() {
   const words = ["Full-Stack Developer", "M.Sc (IT) Student", "MERN Stack Developer", "Web Developer"];
@@ -136,7 +137,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-white dark:border-white/10 overflow-hidden flex items-center justify-center">
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 bg-slate-50 dark:bg-white/5">
                 <img
-                  src="janvi.jpg"
+                  src={janvi}
                   alt="Janvi Kachhadiya"
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
                   onError={(e) => {

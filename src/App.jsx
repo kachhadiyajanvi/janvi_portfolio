@@ -12,23 +12,15 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
-  });
+  const [theme] = useState('dark');
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [theme]);
+    // Unconditionally force Dark Mode
+    document.body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }, []);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  const toggleTheme = () => { }; // Disabled
 
   return (
     <div className="relative min-h-screen selection:bg-accentIndigo/30 selection:text-white transition-colors duration-300">
