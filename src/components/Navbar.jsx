@@ -13,8 +13,7 @@ export default function Navbar({ theme, toggleTheme }) {
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Certifications', href: '#certifications' }
   ];
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function Navbar({ theme, toggleTheme }) {
 
       const sections = navLinks.map(link => link.href.substring(1));
       let currentSection = 'home';
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -62,16 +61,15 @@ export default function Navbar({ theme, toggleTheme }) {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'py-3 bg-white/80 dark:bg-darkBg/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-white/5 shadow-md shadow-slate-100/10 dark:shadow-none' 
-        : 'py-5 bg-transparent border-b border-transparent'
-    }`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+      ? 'py-3 bg-white/80 dark:bg-darkBg/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-white/5 shadow-md shadow-slate-100/10 dark:shadow-none'
+      : 'py-5 bg-transparent border-b border-transparent'
+      }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <a 
-          href="#home" 
-          onClick={(e) => handleClick(e, '#home')} 
+        <a
+          href="#home"
+          onClick={(e) => handleClick(e, '#home')}
           className="text-2xl font-bold tracking-tight text-glow flex items-center gap-1 group"
         >
           <span className="text-accentIndigo dark:text-accentTeal group-hover:text-pink-500 transition-colors duration-300">Janvi</span>
@@ -86,11 +84,10 @@ export default function Navbar({ theme, toggleTheme }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className={`text-xs font-semibold tracking-wider uppercase transition-colors duration-300 ${
-                    activeSection === link.href.substring(1) 
-                      ? 'text-accentIndigo dark:text-accentTeal border-b-2 border-accentIndigo dark:border-accentTeal pb-1' 
-                      : 'text-slate-500 dark:text-textSecondary hover:text-accentIndigo dark:hover:text-accentTeal'
-                  }`}
+                  className={`text-xs font-semibold tracking-wider uppercase transition-colors duration-300 ${activeSection === link.href.substring(1)
+                    ? 'text-accentIndigo dark:text-accentTeal border-b-2 border-accentIndigo dark:border-accentTeal pb-1'
+                    : 'text-slate-500 dark:text-textSecondary hover:text-accentIndigo dark:hover:text-accentTeal'
+                    }`}
                 >
                   {link.name}
                 </a>
@@ -100,21 +97,13 @@ export default function Navbar({ theme, toggleTheme }) {
 
           <div className="flex items-center gap-4 border-l border-slate-200 dark:border-white/10 pl-6">
             {/* Theme Toggle Button */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-white rounded-full border border-slate-200/50 dark:border-white/5 transition-all duration-300 hover:scale-110 active:scale-95"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-700" />}
-            </button>
-
-            <a
-              href="#contact"
-              onClick={(e) => handleClick(e, '#contact')}
-              className="px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-accentIndigo/30 dark:border-accentTeal/50 text-accentIndigo dark:text-accentTeal bg-accentIndigo/5 dark:bg-accentTeal/5 hover:bg-accentIndigo hover:text-white dark:hover:bg-accentTeal dark:hover:text-darkBg transition-all duration-300 shadow-[0_4px_15px_rgba(79,70,229,0.08)] dark:shadow-[0_0_15px_rgba(0,245,255,0.1)]"
-            >
-              Contact
-            </a>
+            </button> */}
           </div>
         </div>
 
@@ -142,9 +131,8 @@ export default function Navbar({ theme, toggleTheme }) {
 
       {/* Mobile Drawer (Responsive Drawer) */}
       <div
-        className={`fixed inset-y-0 right-0 w-80 max-w-[80vw] bg-white/95 dark:bg-darkBg/95 backdrop-blur-xl border-l border-slate-200/50 dark:border-white/5 flex flex-col justify-between p-8 z-40 lg:hidden shadow-2xl transition-transform duration-500 ease-in-out transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed inset-y-0 right-0 w-80 max-w-[80vw] bg-white/95 dark:bg-darkBg/95 backdrop-blur-xl border-l border-slate-200/50 dark:border-white/5 flex flex-col justify-between p-8 z-40 lg:hidden shadow-2xl transition-transform duration-500 ease-in-out transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex justify-between items-center border-b border-slate-100 dark:border-white/5 pb-4">
           <span className="font-bold text-accentIndigo dark:text-accentTeal">Menu</span>
@@ -162,11 +150,10 @@ export default function Navbar({ theme, toggleTheme }) {
               <a
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className={`text-lg font-bold tracking-wide uppercase transition-colors duration-300 block py-1 border-b border-transparent ${
-                  activeSection === link.href.substring(1) 
-                    ? 'text-accentIndigo dark:text-accentTeal border-accentIndigo/20 dark:border-accentTeal/20' 
-                    : 'text-slate-600 dark:text-textSecondary hover:text-accentIndigo dark:hover:text-accentTeal'
-                }`}
+                className={`text-lg font-bold tracking-wide uppercase transition-colors duration-300 block py-1 border-b border-transparent ${activeSection === link.href.substring(1)
+                  ? 'text-accentIndigo dark:text-accentTeal border-accentIndigo/20 dark:border-accentTeal/20'
+                  : 'text-slate-600 dark:text-textSecondary hover:text-accentIndigo dark:hover:text-accentTeal'
+                  }`}
               >
                 {link.name}
               </a>
