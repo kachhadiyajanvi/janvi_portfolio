@@ -56,7 +56,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 bg-accentTeal/10 dark:bg-accentTeal/15 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full z-10">
-        
+
         {/* Left: Text Content */}
         <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-left order-2 lg:order-1 animate-fade-in-up">
           <div>
@@ -132,9 +132,9 @@ export default function Hero() {
           <div className="relative group">
             {/* Ambient background glows behind image */}
             <div className="absolute -inset-1.5 bg-gradient-to-r from-accentIndigo to-accentViolet dark:from-accentTeal dark:to-accentIndigo rounded-full opacity-40 dark:opacity-60 group-hover:opacity-80 dark:group-hover:opacity-100 blur-xl transition-all duration-500 group-hover:scale-105"></div>
-            
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-white dark:bg-darkBg border border-slate-200/50 dark:border-white/10 overflow-hidden flex items-center justify-center">
-              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-white/5">
+
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-white dark:border-white/10 overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-2 bg-slate-50 dark:bg-white/5">
                 <img
                   src="janvi.jpg"
                   alt="Janvi Kachhadiya"
