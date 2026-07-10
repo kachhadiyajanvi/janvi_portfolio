@@ -13,7 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || 'dark';
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen selection:bg-accentIndigo/30 selection:text-white transition-colors duration-300">
-      
+
       {/* Background Animated Neon Blobs (Global) */}
       <div className="bg-blob blob-teal"></div>
       <div className="bg-blob blob-purple"></div>
@@ -55,7 +55,7 @@ export default function App() {
 
       {/* Footer Content */}
       <Footer />
-      
+
       <ScrollToTop />
     </div>
   );
